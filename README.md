@@ -1,58 +1,60 @@
-# iaeste-report-automation-
+Outgoing-Report-Generator
 
-The **Outgoing Exchange Coordinator** is a browser-based task management and reporting system designed to help student exchange program coordinators efficiently handle their daily activities. With no server or database dependency, this tool works entirely offline using `localStorage`, making it simple, secure, and highly portable.
+A browser-based task and reporting system for IAESTE Outgoing Exchange Coordinators.
+This lightweight tool helps coordinators manage actions like nominations, rejections, and acceptances across various offer categories—all offline using localStorage.
 
----
+Purpose
+   Coordinating outgoing exchange tasks involves multiple offer categories and types. This tool simplifies the workflow by:
+   Allowing fast task entry
+   Filtering tasks per coordinator
+   Generating clean reports in a click
+   Displaying statistics by category and action
+   Working completely offline (no backend)
 
-## 🎯 Purpose
+Features
+   Coordinator login (no password)
+   Add tasks with offer details and candidate info
+   View tasks filtered by logged-in user
+   Generate:
+      Weekly reports (last 7 days)
+      15-Day reports
+      Monthly reports (from 1st of month)
+   View action-based and category-based statistics
+   Admin option to clear all data
+   All data stored locally via localStorage
 
-Managing exchange-related tasks like nominations, acceptances, and cancellations across different categories (like internships or reserved offers) can be chaotic. This application:
+How It Works
+   Login with your coordinator name
+   Add new tasks with:
+      Offer Category (Global Internship, Exchange, Reserved)
+      Offer Type (COBE, FCFS, etc.)
+      Action Type (Nomination, Rejection, etc.)
+      Candidate Name and Offer Number
+   View your task list
+   Generate reports instantly
+   Review statistics
+   Clear all entries (admin only)
 
-- Keeps track of every coordinator's actions
-- Simplifies reporting with one-click report generation
-- Provides filtered statistics per category
-- Ensures quick data entry with a clean UI
+Project Structure
+   OutgoingExchangeCoordinator/
+├── index.html             # Main HTML and UI structure
+├── styles.css             # Styling for layout, dark mode, responsiveness
+├── script.js              # All logic: login, task handling, reports, stats
+├── Screenshot-login.png   # Screenshot of login page
+├── Screenshot-task-entry.png  # Screenshot of task entry form
+├── Screenshot-report.png      # Screenshot of report view
+└── README.md              # Project documentation
 
----
+Screenshot Previews
+![Screenshot-login](https://github.com/user-attachments/assets/ea11e947-554b-4751-822c-12cdc3627d3b)
 
-## 🚀 Features Overview
+![Screenshot-task-entry](https://github.com/user-attachments/assets/18084c05-c98d-40e6-ab05-fa0a3776d3fd)
 
-| Feature                          | Description                                                                 |
-|----------------------------------|-----------------------------------------------------------------------------|
-| 🧑‍💼 Login System                 | Simple login using coordinator name (no passwords)                         |
-| 📝 Task Management              | Add tasks with categories, types, candidate names, and action types        |
-| 📋 Task Display                 | Tasks are shown filtered by the logged-in coordinator                      |
-| 📊 Report Generation            | One-click Weekly, 15-Day, and Monthly reports                              |
-| 📈 Statistics View              | View structured stats for all categories and offer types                   |
-| 🗑️ Admin Delete                 | Clear all data with one click (with confirmation)                          |
-| 💾 Local Storage                | Tasks persist between sessions with `localStorage`                         |
+![Screenshot-report](https://github.com/user-attachments/assets/a0e68625-27bd-4c3f-8f7b-101cf24d9b46)
 
----
 
-## 🖥️ How It Works
-
-Once a coordinator logs in, they can:
-
-1. **Add new tasks** like "Nomination", "Rejection", or custom actions.
-2. **Select offer categories**:  
-   - Global Internship (e.g., COBE, FCFS)  
-   - Exchange Offers (e.g., Open, April, Winter, Autumn)  
-   - Reserved Offers (no subtype)
-3. View a **task list**, filtered only to their entries.
-4. Generate reports:
-   - **Weekly Report** (last Sunday to Saturday)
-   - **15-Day Summary**
-   - **Monthly Report** (1st to current day)
-5. View **statistics** per offer and action (Nominated, Rejected, etc.)
-6. Use the admin option to **delete all tasks** when needed.
-
----
-
-## 🧠 Task Object Structure
-
-Each task is stored in this format inside the browser:
-
-```json
+Data Format
+Tasks are stored in the following format:
 {
   "coordinator": "Alice",
   "datetime": "2025-06-06T13:30:00.000Z",
@@ -63,14 +65,6 @@ Each task is stored in this format inside the browser:
   "candidateName": "John Doe"
 }
 
+License
+This project is licensed under the MIT License
 
-📁 OutgoingExchangeCoordinator/
-├── index.html     # Main HTML structure and UI
-├── styles.css     # All styles: layout, responsive design, dark mode
-├── script.js      # Full logic: login, task handling, reporting
-└── README.md      # Project documentation
-
-
-![Login Page](Screenshot-login)
-![Task Entry](Screenshot-task-entry)
-![Report Example](Screenshot-report)
