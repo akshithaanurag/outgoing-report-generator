@@ -68,3 +68,6 @@ Tasks are stored in the following format:
 License
 This project is licensed under the MIT License
 
+Author
+   Akshitha Anurag
+   Live Demo: https://akshithaanurag.github.io/outgoing-report-generator/
